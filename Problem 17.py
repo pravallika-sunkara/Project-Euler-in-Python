@@ -13,23 +13,26 @@ out numbers is in compliance with British usage.
 
 import inflect
 import re
+import time
+
+start=time.time()
 
 def lenofnumber(num):
   p=inflect.engine()
   s=p.number_to_words(num)
-  #print s
-  new= re.split('and ',s)
-  #print new
+  new= s.replace('-', ' ').split(' ')
+  #news=re.split(r' |-', s)  #you can use this also
   q="".join(new)
-  #print q
   return len(q)
 
 def Main():
   summation=[]
-  for i in range(1,9):
+  for i in range(1,1001):
     h=lenofnumber(i)
     summation.append(h)
   print "total number of letters used:",sum(summation)
+  end=time.time()
+  print end-start
   
 if __name__=="__main__":
   Main()
