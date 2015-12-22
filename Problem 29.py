@@ -23,8 +23,8 @@ def Main():
         continue
       else:
         numbers.append(c)
-  num=numbers.sort()
-  print("Number of distinct terms in the sequence are:",len(num))
+  # num=numbers.sort() #for a ascending order of elements
+  print("Number of distinct terms in the sequence are:",len(numbers))
 
 if __name__=="__main__":
   Main()
